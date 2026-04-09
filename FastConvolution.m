@@ -1,4 +1,4 @@
-% GenerateDa.m
+% FastConvolution.m
 % If you use it, please cite the corresponding paper:
 % Francisco de la Hoz, Peru Muniain,
 % Numerical approximation of Caputo-type advection-diffusion equations via Sylvester equations,
