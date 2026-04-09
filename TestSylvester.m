@@ -23,7 +23,7 @@ B(1:nB+1:end)=0; % Set the diagonal to zero
 B=B+diag(sum(abs(B),2)+1i*randn(nB,1));
 X=randn(nA,nB)+1i*randn(nA,nB); % Generate $\mathbf X$
 C=A*X+X*B; % Compute $\mathbf C$
-tic, X1=sylv_almosttri(A,B,C); toc % Elapsed time of sylv_almosttri
+tic, X1=SylvesterAAlmostTriangular(A,B,C); toc % Elapsed time of SylvesterAAlmostTriangular
 tic, X2=lyap(A,B,-C); toc % Elapsed time of lyap
 tic, X3=sylvester(A,B,C); toc % Elapsed time of sylvester
 disp(norm(X(:)-X1(:),inf)) % Maximum error of sylv_almosttri
