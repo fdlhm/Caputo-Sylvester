@@ -27,7 +27,7 @@ Bx=Dx^2-Dx; % $\mathbf B_x$
 A=Et'*Dta*Et; % $\mathbf A$
 B=-Ex*Bx*Ex.'; % $\mathbf B$
 C=(-Et'*Dta*Et*Fx(2:end,:)+Fx(2:end,:)*Bx+Et'*A4)*Ex.'; % $\mathbf C$
-Uinner=sylv_almosttri(A,B,C); % $\mathbf U_{inner}$
+Uinner=SylvesterAAlmostTriangular(A,B,C); % $\mathbf U_{inner}$
 Unum=Et*Uinner*Ex+Et*Fx(2:end,:); % $\mathbf U_{num}$
 disp(max(max(abs(Unum-u(T,X))))) % Error
 toc % Elapsed time
