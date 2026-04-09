@@ -29,7 +29,7 @@ Bx=Dx2+Dx*A2+A3; % $\mathbf B_x$
 A=Et'*Dta*Et; % $\mathbf A$
 B=-Bx; % $\mathbf B$
 C=-Et'*Dta*Ft+Et'*A4; % $\mathbf C$
-Uinner=sylv_almosttri(A,B,C); % $\mathbf U_{inner}$
+Uinner=SylvesterAAlmostTriangular(A,B,C); % $\mathbf U_{inner}$
 Unum=Et*Uinner+Ft; % $\mathbf U_{num}$
 disp(max(max(abs(Unum-u(T,X))))) % Error
 toc % Elapsed time
