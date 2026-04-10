@@ -8,11 +8,13 @@ clear
 tic
 a=0.17; % $\alpha$
 tf=1.2; % $t_f$
-N=100; % $N$
+N=200; % $N$
 tj=tf*(0:N)'/N; % $t_j$
 h=tf/N; % $h$
 f=exp(2*tj); % $f(t_j)$
 Dtaf=(2^a/gamma(1-a))*(exp(2*tj).*(gamma(1-a)-igamma(1-a,2*tj))); % $D_t^\alpha f$
+%f=tj.^2;
+%Dtaf=2/gamma(3-a)*tj.^(2-a);
 toc,tic % Elapsed time needed to generate $D^\alpha f$
 Dtafnum=zeros(N+1,1); % $D_{t,num}^\alpha f$
 Dtafnumstar=zeros(N+1,1); % $D_{t,num}^{\alpha,*}f$
